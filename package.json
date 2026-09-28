@@ -1,0 +1,46 @@
+{
+  "name": "n8n-nodes-paperwright",
+  "version": "0.1.0",
+  "description": "Render PDF documents from Paperwright templates in n8n workflows",
+  "keywords": [
+    "n8n-community-node-package",
+    "paperwright",
+    "pdf",
+    "render",
+    "automation"
+  ],
+  "license": "MIT",
+  "homepage": "https://paperwright.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aliaburumman/n8n-nodes-paperwright.git"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "main": "dist/nodes/Paperwright/Paperwright.node.js",
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/PaperwrightApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Paperwright/Paperwright.node.js"
+    ]
+  },
+  "scripts": {
+    "build": "n8n-node build",
+    "dev": "n8n-node dev",
+    "lint": "n8n-node lint",
+    "lint:fix": "n8n-node lint --fix",
+    "release": "n8n-node release"
+  },
+  "devDependencies": {
+    "@n8n/node-cli": "^0.49.1",
+    "n8n-workflow": "^2.16.0",
+    "typescript": "^5.8.0"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "node": "n8n-nodes-paperwright.paperwright",
+  "nodeVersion": 1,
+  "codexVersion": 1,
+  "categories": ["Productivity", "Developer Tools"],
+  "resources": {
+    "credentialDocumentationUrl": "https://github.com/aliaburumman/n8n-nodes-paperwright#credentials",
+    "primaryDocumentationUrl": "https://github.com/aliaburumman/n8n-nodes-paperwright#usage"
+  },
+  "alias": ["pdf", "paperwright", "pdfly", "document", "invoice", "mail merge", "render"]
+}
