@@ -68,6 +68,27 @@ your template's `{{field}}` tokens automatically:
 - [Paperwright](https://paperwright.dev)
 - [API docs / OpenAPI spec](https://api.paperwright.dev/openapi/v1.json)
 - [INTEGRATION guide](https://github.com/aliaburumman/paperwright-api/blob/main/INTEGRATION.md)
+- [n8n community nodes docs](https://docs.n8n.io/integrations/community-nodes/)
+- [n8n-node tool docs](https://docs.n8n.io/connect/create-nodes/build-your-node/using-the-n8n-node-tool.md)
+
+## Next steps
+
+- [ ] Deploy the backend auth changes to Render — the node's List/Batch/Usage
+      operations need API-key auth live on `api.paperwright.dev`
+      ([paperwright-api](https://github.com/aliaburumman/paperwright-api) → `feat/n8n-machine-auth`)
+- [ ] Test the node live: `npm run dev` in this folder (needs Docker or Podman),
+      then run a real render against `https://api.paperwright.dev` with an API key
+- [ ] Replace the placeholder icon at `nodes/Paperwright/paperwright.png` with
+      the real brand mark
+- [ ] Publish: `npm login` + `npm run release` (run on Node >= 24 or from CI —
+      `isolated-vm`, a dev dependency of the toolchain, doesn't build on Node 22)
+- [ ] After publishing: install in n8n via Settings → Community Nodes, then
+      [submit for n8n verification](https://docs.n8n.io/integrations/community-nodes/building-community-nodes.md)
+      to unlock n8n Cloud
+- [ ] Docs: add the n8n guide page to
+      [paperwright-docs](https://github.com/aliaburumman/paperwright-docs) and
+      link the hosted workflow templates (`/n8n/render-on-webhook.json`,
+      `/n8n/render-on-schedule.json`)
 
 ## License
 
