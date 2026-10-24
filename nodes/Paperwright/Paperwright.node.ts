@@ -18,7 +18,7 @@ export class Paperwright implements INodeType {
   description: INodeTypeDescription = {
     displayName: 'Paperwright',
     name: 'paperwright',
-    icon: 'file:paperwright.png',
+    icon: 'file:paperwright.svg',
     group: ['output'],
     version: 1,
     subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',

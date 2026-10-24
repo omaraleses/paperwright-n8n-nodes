@@ -78,10 +78,9 @@ your template's `{{field}}` tokens automatically:
       ([paperwright-api](https://github.com/aliaburumman/paperwright-api) → `feat/n8n-machine-auth`)
 - [ ] Test the node live: `npm run dev` in this folder (needs Docker or Podman),
       then run a real render against `https://api.paperwright.dev` with an API key
-- [ ] Replace the placeholder icon at `nodes/Paperwright/paperwright.png` with
-      the real brand mark
-- [ ] Publish: `npm login` + `npm run release` (run on Node >= 24 or from CI —
-      `isolated-vm`, a dev dependency of the toolchain, doesn't build on Node 22)
+- [x] Replace the placeholder icon with the brand mark (`nodes/Paperwright/paperwright.svg`)
+- [ ] Publish from GitHub Actions: one-time npm setup is in `.github/workflows/publish.yml`,
+      then `npm run release` locally tags a version and CI publishes it with provenance
 - [ ] After publishing: install in n8n via Settings → Community Nodes, then
       [submit for n8n verification](https://docs.n8n.io/integrations/community-nodes/building-community-nodes.md)
       to unlock n8n Cloud

@@ -1,0 +1,60 @@
+# Publishes n8n-nodes-paperwright to npm when a version tag is pushed.
+#
+# n8n requires community nodes to be published from GitHub Actions with npm
+# provenance (from 1 May 2026) before it will verify them. This workflow does that.
+#
+# One-time setup, pick one:
+#   A. Trusted Publishing (recommended, no secret): on npmjs.com open the
+#      package → Settings → Trusted Publishers → Add → GitHub Actions, with
+#      owner "omaraleses", repository "paperwright-n8n-nodes", workflow
+#      "publish.yml", environment blank. Leave NPM_TOKEN unset.
+#      The package must exist on npm first, so the very first release uses B.
+#   B. Token: npmjs.com → Access Tokens → Granular Access Token with
+#      read and write on this package (or "all packages" for the first
+#      publish). Save it in GitHub → Settings → Secrets and variables →
+#      Actions as NPM_TOKEN.
+#
+# To release, run locally:  npm run release
+# It lints, builds, asks for the version bump, commits, tags (e.g. 0.1.1) and
+# pushes. The tag push starts this workflow, which publishes to npm.
+
+name: Publish
+
+on:
+  push:
+    tags:
+      - '*.*.*'
+
+jobs:
+  publish:
+    name: Publish to npm
+    runs-on: ubuntu-latest
+
+    permissions:
+      # Needed to mint the OIDC token for provenance and Trusted Publishing.
+      id-token: write
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: 'npm'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Release
+        # In CI, `n8n-node release` lints, builds and runs npm publish with
+        # --provenance. With NPM_TOKEN unset, npm uses Trusted Publishing.
+        run: |
+          if [ -n "$NPM_TOKEN" ]; then
+            npm config set //registry.npmjs.org/:_authToken "$NPM_TOKEN"
+          fi
+          npm run release
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
