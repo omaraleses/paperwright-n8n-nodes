@@ -17,7 +17,7 @@
   "homepage": "https://paperwright.dev",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/omaraleses/n8n-nodes-paperwright.git"
+    "url": "git+https://github.com/omaraleses/paperwright-n8n-nodes.git"
   },
   "engines": {
     "node": ">=22"

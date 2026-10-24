@@ -6,7 +6,7 @@
 # One-time setup, pick one:
 #   A. Trusted Publishing (recommended, no secret): on npmjs.com open the
 #      package → Settings → Trusted Publishers → Add → GitHub Actions, with
-#      owner "omaraleses", repository "n8n-nodes-paperwright", workflow
+#      owner "omaraleses", repository "paperwright-n8n-nodes", workflow
 #      "publish.yml", environment blank. Leave NPM_TOKEN unset.
 #      The package must exist on npm first, so the very first release uses B.
 #   B. Token: npmjs.com → Access Tokens → Granular Access Token with
