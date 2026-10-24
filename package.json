@@ -1,6 +1,10 @@
 {
   "name": "n8n-nodes-paperwright",
   "version": "0.1.0",
+  "author": {
+    "name": "omar aleses",
+    "email": "esesomar01@gmail.com"
+  },
   "description": "Render PDF documents from Paperwright templates in n8n workflows",
   "keywords": [
     "n8n-community-node-package",
@@ -13,7 +17,7 @@
   "homepage": "https://paperwright.dev",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aliaburumman/n8n-nodes-paperwright.git"
+    "url": "git+https://github.com/omaraleses/n8n-nodes-paperwright.git"
   },
   "engines": {
     "node": ">=22"

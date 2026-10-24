@@ -2,6 +2,7 @@ import type {
   IAuthenticate,
   ICredentialTestRequest,
   ICredentialType,
+  Icon,
   INodeProperties,
 } from 'n8n-workflow';
 
@@ -14,6 +15,8 @@ export class PaperwrightApi implements ICredentialType {
   name = 'paperwrightApi';
 
   displayName = 'Paperwright API Key';
+
+  icon: Icon = 'file:../nodes/Paperwright/paperwright.svg';
 
   documentationUrl = 'https://api.paperwright.dev';
 
